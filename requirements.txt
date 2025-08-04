@@ -1,6 +1,8 @@
 pyrogram==2.0.106
-tgcrypto
+tgcrypto==1.2.5
 requests
 Pillow
-rembg==2.0.50
+rembg
 python-dotenv
+face_recognition
+opencv-python
