@@ -1,6 +1,8 @@
 pyrogram==2.0.106
-tgcrypto
+tgcrypto==1.2.5
 requests
 Pillow
 rembg
 python-dotenv
+opencv-python
+onnxruntime
