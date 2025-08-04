@@ -168,4 +168,5 @@ async def face_swap(_, m: Message):
     await m.reply_photo(swap_img_path, caption="🧑‍🎤 Face replaced (simulated).")
 
 # Run the bot
+print("🚀 Bot is starting up...")
 app.run()
