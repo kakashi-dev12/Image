@@ -7,17 +7,21 @@ from PIL import Image, ImageDraw, ImageFont
 from rembg import remove
 import shutil
 
-from dotenv import load_dotenv
-load_dotenv()
+# ✅ No need to load .env
+# from dotenv import load_dotenv
+# load_dotenv()
 
-API_ID = int(os.getenv("API_ID"))
-API_HASH = os.getenv("API_HASH")
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-STABILITY_API_KEY = os.getenv("STABILITY_API_KEY")
+# 🔐 Getting environment variables directly (Render-style)
+API_ID = int(os.environ["API_ID"])
+API_HASH = os.environ["API_HASH"]
+BOT_TOKEN = os.environ["BOT_TOKEN"]
+STABILITY_API_KEY = os.environ["STABILITY_API_KEY"]
 
+# ✅ Pyrogram bot initialization
 app = Client("ai_image_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
-user_memory = {}  # Stores user's last image path
+# 🧠 Dictionary to store last image path per user
+user_memory = {}
 def generate_image(prompt):
     url = "https://api.stability.ai/v2beta/stable-image/generate/core"
     headers = {
